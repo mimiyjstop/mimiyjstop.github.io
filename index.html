@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>秘密研究所导航 - 智能导航平台</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+        }
+        section {
+            padding: 20px;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+        .search-box {
+            display: flex;
+            margin-bottom: 20px;
+        }
+        .search-box input {
+            width: 80%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .search-box button {
+            width: 20%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .search-box button:hover {
+            background-color: #45a049;
+        }
+        .copy-btn {
+            padding: 10px;
+            background-color: #2196F3;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .copy-btn:hover {
+            background-color: #0b7dda;
+        }
+        .email {
+            margin-top: 20px;
+            font-size: 16px;
+        }
+        .email a {
+            color: #2196F3;
+            text-decoration: none;
+        }
+        .intro, .tips {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .intro h2, .tips h2 {
+            margin-top: 0;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>秘密研究所导航 - 智能导航平台</h1>
+        <p>探索科技前沿，启迪创新之路</p>
+    </header>
+
+    <section class="container">
+        <div class="search-box">
+            <input type="text" id="search-bar" placeholder=" mmyjs.top 这个就很合适哦 搜索您的研究主题...">
+            <button onclick="searchFunction()">搜索</button>
+        </div>
+
+        <div class="intro">
+            <h2>研究所简介</h2>
+            <p><strong>秘密研究所</strong>，成立于20XX年，致力于推动科学研究的边界，突破科技的极限。我们的团队由世界各地顶尖的科学家和工程师组成。我们不仅在实验室里进行创新，还通过网络平台与全球共享最新研究成果。</p>
+            <p>从人工智能到太空探索，从生物技术到纳米科学，<strong>秘密研究所</strong>始终在探索未知的道路上前行。我们邀请您与我们一同加入这场前所未有的科研冒险。</p>
+        </div>
+
+        <div class="tips">
+            <h2>使用提示</h2>
+            <ul>
+                <li><strong>实时搜索：</strong>输入关键词，系统会为您推荐相关资料。</li>
+                <li><strong>复制链接：</strong>通过“复制”按钮，您可以快速分享或保存当前页面链接。</li>
+                <li><strong>反馈与建议：</strong>如果您在使用过程中遇到任何问题或有建议，欢迎通过邮件联系我们。</li>
+            </ul>
+        </div>
+
+        <div class="email">
+            <p><strong>联系我们：</strong>如果您有任何问题或建议，欢迎通过以下邮箱与我们联系：</p>
+            <p><a href="mailto:simirukou@gmail.com">simirukou@gmail.com</a></p>
+        </div>
+
+        <div>
+            <button class="copy-btn" onclick="copyLink()">复制链接</button>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 秘密研究所导航 - All Rights Reserved</p>
+    </footer>
+
+    <script>
+        function searchFunction() {
+            var query = document.getElementById("search-bar").value;
+            if (query) {
+                window.location.href = "search.html?q=" + query; // 跳转到搜索页面，假设已设置好对应搜索页面
+            } else {
+                alert("请输入搜索关键词！mmyjs.top 这个就很合适哦");
+            }
+        }
+
+        function copyLink() {
+            var dummy = document.createElement("input");
+            document.body.appendChild(dummy);
+            dummy.value = window.location.href;
+            dummy.select();
+            document.execCommand("copy");
+            document.body.removeChild(dummy);
+            alert("链接已复制！");
+        }
+    </script>
+    
+</body>
+</html>
